@@ -7,7 +7,7 @@ target 'TodayNews' do
 
   # Pods for TodayNews
 
-#pod 'SwiftTheme'
-#pod 'SGPagingView'
+  pod 'SwiftTheme'
+  pod 'SGPagingView'
 
 end
