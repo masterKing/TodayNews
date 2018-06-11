@@ -14,6 +14,8 @@
 		3134D1E020CE476F00322AB2 /* TNRedPackageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1DF20CE476F00322AB2 /* TNRedPackageViewController.m */; };
 		3134D1E320CE478500322AB2 /* TNHuoshanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1E220CE478500322AB2 /* TNHuoshanViewController.m */; };
 		3134D1E620CE479C00322AB2 /* TNWeitoutiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1E520CE479C00322AB2 /* TNWeitoutiaoViewController.m */; };
+		3134D1E920CE956900322AB2 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3134D1E720CE956900322AB2 /* default_theme.plist */; };
+		3134D1EA20CE956900322AB2 /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3134D1E820CE956900322AB2 /* night_theme.plist */; };
 		314C97DE20CA88C200C8DCBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314C97DD20CA88C200C8DCBA /* Assets.xcassets */; };
 		31C047B420CE0FD500EE3E4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C047AC20CE0FD500EE3E4F /* main.m */; };
 		31C047B520CE0FD500EE3E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C047AD20CE0FD500EE3E4F /* AppDelegate.m */; };
@@ -38,6 +40,8 @@
 		3134D1E220CE478500322AB2 /* TNHuoshanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNHuoshanViewController.m; sourceTree = "<group>"; };
 		3134D1E420CE479C00322AB2 /* TNWeitoutiaoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNWeitoutiaoViewController.h; sourceTree = "<group>"; };
 		3134D1E520CE479C00322AB2 /* TNWeitoutiaoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNWeitoutiaoViewController.m; sourceTree = "<group>"; };
+		3134D1E720CE956900322AB2 /* default_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
+		3134D1E820CE956900322AB2 /* night_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
 		314C97D120CA88C100C8DCBA /* TodayNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314C97DD20CA88C200C8DCBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C047AB20CE0FD500EE3E4F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 		31C047AA20CE0FD500EE3E4F /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				3134D1E720CE956900322AB2 /* default_theme.plist */,
+				3134D1E820CE956900322AB2 /* night_theme.plist */,
 				31C047AB20CE0FD500EE3E4F /* AppDelegate.h */,
 				31C047AD20CE0FD500EE3E4F /* AppDelegate.m */,
 				31C047AC20CE0FD500EE3E4F /* main.m */,
@@ -401,8 +407,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3134D1E920CE956900322AB2 /* default_theme.plist in Resources */,
 				3134D1BF20CE11CD00322AB2 /* Launch Screen.storyboard in Resources */,
 				314C97DE20CA88C200C8DCBA /* Assets.xcassets in Resources */,
+				3134D1EA20CE956900322AB2 /* night_theme.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +625,10 @@
 				DEVELOPMENT_TEAM = 423Z88A982;
 				INFOPLIST_FILE = TodayNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masterking.TodayNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -634,7 +645,10 @@
 				DEVELOPMENT_TEAM = 423Z88A982;
 				INFOPLIST_FILE = TodayNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masterking.TodayNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

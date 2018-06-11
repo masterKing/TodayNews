@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [ThemeManager setThemeWithPlistInMainBundle:[NSUserDefaults.standardUserDefaults objectForKey:isNight] ? @"night_theme" : @"default_theme"];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = [TNMyTabBarController new];
     [self.window makeKeyAndVisible];
