@@ -1,15 +1,21 @@
 PODS:
+  - Alamofire (4.7.2)
   - SGPagingView (1.3.6)
   - SwiftTheme (0.4.1)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - Alamofire
   - SGPagingView
   - SwiftTheme
+  - YYModel
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   SGPagingView: 4e9204cc62e4b63b269fbf48b4e8c9333adcd071
   SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5496d130d433a52751dc48dbf59efc2991b82463
+PODFILE CHECKSUM: facd533ea45046db0d3605a9fe5cc0d8f987d5b6
 
 COCOAPODS: 1.4.0

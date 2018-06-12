@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "TNMyTabBarController.h"
-#import <SwiftTheme/SwiftTheme-Swift.h>
 
 @interface AppDelegate ()
 

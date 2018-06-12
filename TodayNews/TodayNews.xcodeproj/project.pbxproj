@@ -16,6 +16,7 @@
 		3134D1E620CE479C00322AB2 /* TNWeitoutiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1E520CE479C00322AB2 /* TNWeitoutiaoViewController.m */; };
 		3134D1E920CE956900322AB2 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3134D1E720CE956900322AB2 /* default_theme.plist */; };
 		3134D1EA20CE956900322AB2 /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3134D1E820CE956900322AB2 /* night_theme.plist */; };
+		3134D1ED20CF830C00322AB2 /* TNNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1EC20CF830C00322AB2 /* TNNetworkTool.m */; };
 		314C97DE20CA88C200C8DCBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314C97DD20CA88C200C8DCBA /* Assets.xcassets */; };
 		31C047B420CE0FD500EE3E4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C047AC20CE0FD500EE3E4F /* main.m */; };
 		31C047B520CE0FD500EE3E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C047AD20CE0FD500EE3E4F /* AppDelegate.m */; };
@@ -42,6 +43,8 @@
 		3134D1E520CE479C00322AB2 /* TNWeitoutiaoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNWeitoutiaoViewController.m; sourceTree = "<group>"; };
 		3134D1E720CE956900322AB2 /* default_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
 		3134D1E820CE956900322AB2 /* night_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
+		3134D1EB20CF830C00322AB2 /* TNNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNNetworkTool.h; sourceTree = "<group>"; };
+		3134D1EC20CF830C00322AB2 /* TNNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNNetworkTool.m; sourceTree = "<group>"; };
 		314C97D120CA88C100C8DCBA /* TodayNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314C97DD20CA88C200C8DCBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C047AB20CE0FD500EE3E4F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -300,6 +303,8 @@
 		31C047B020CE0FD500EE3E4F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3134D1EB20CF830C00322AB2 /* TNNetworkTool.h */,
+				3134D1EC20CF830C00322AB2 /* TNNetworkTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -457,13 +462,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TodayNews/Pods-TodayNews-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SGPagingView/SGPagingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGPagingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -479,6 +488,7 @@
 			files = (
 				3134D1E020CE476F00322AB2 /* TNRedPackageViewController.m in Sources */,
 				3134D1E620CE479C00322AB2 /* TNWeitoutiaoViewController.m in Sources */,
+				3134D1ED20CF830C00322AB2 /* TNNetworkTool.m in Sources */,
 				31C047B520CE0FD500EE3E4F /* AppDelegate.m in Sources */,
 				3134D1C320CE45F400322AB2 /* TNMyNavigationController.m in Sources */,
 				3134D1E320CE478500322AB2 /* TNHuoshanViewController.m in Sources */,
@@ -625,10 +635,7 @@
 				DEVELOPMENT_TEAM = 423Z88A982;
 				INFOPLIST_FILE = TodayNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.masterking.TodayNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -645,10 +652,7 @@
 				DEVELOPMENT_TEAM = 423Z88A982;
 				INFOPLIST_FILE = TodayNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.masterking.TodayNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
