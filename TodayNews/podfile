@@ -9,6 +9,6 @@ target 'TodayNews' do
 
   pod 'SwiftTheme'
   pod 'SGPagingView'
-  pod 'Alamofire'
   pod 'YYModel'
+  pod 'AFNetworking'
 end

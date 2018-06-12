@@ -10,6 +10,13 @@
 
 @interface TNNetworkTool : NSObject
 
+#pragma mark - 首页 home 接口
+
+/**
+ 首页顶部新闻标题数据
+ */
 + (void)loadHomeNewsTitleData:(void (^)(NSArray *newsTitles))completionHandler;
+
+
 
 @end

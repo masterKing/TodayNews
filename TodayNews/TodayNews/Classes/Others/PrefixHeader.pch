@@ -16,12 +16,14 @@
 #import <Foundation/Foundation.h>
 #import <SwiftTheme/SwiftTheme-Swift.h>
 
+#define kScreenWidth UIScreen.mainScreen.bounds.size.width
+#define kScreenHeight UIScreen.mainScreen.bounds.size.height
+
 static NSString *isNight = @"isNight";
 static NSString *dayOrNightButtonClicked = @"dayOrNightButtonClicked";
 static CGFloat newsTitleHeight = 40;
-
-
-#define kScreenWidth UIScreen.mainScreen.bounds.size.width
-#define kScreenHeight UIScreen.mainScreen.bounds.size.height
+static NSString *BASE_URL = @"https://is.snssdk.com";//"http://lf.snssdk.com" || "http://ib.snssdk.com"
+static NSInteger device_id = 6096495334;
+static NSInteger iid = 5034850950;
 
 #endif /* PrefixHeader_pch */

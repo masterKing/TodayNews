@@ -8,6 +8,12 @@
 
 #import "TNNetworkTool.h"
 
+
 @implementation TNNetworkTool
+
++ (void)loadHomeNewsTitleData:(void (^)(NSArray *))completionHandler{
+    NSString *url = [NSString stringWithFormat:@"%@/article/category/get_subscribed/v1/?",BASE_URL];
+    
+}
 
 @end
