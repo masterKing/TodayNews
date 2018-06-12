@@ -11,4 +11,5 @@ target 'TodayNews' do
   pod 'SGPagingView'
   pod 'YYModel'
   pod 'AFNetworking'
+  pod 'MJExtension'
 end

@@ -17,6 +17,9 @@
 		3134D1E920CE956900322AB2 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3134D1E720CE956900322AB2 /* default_theme.plist */; };
 		3134D1EA20CE956900322AB2 /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3134D1E820CE956900322AB2 /* night_theme.plist */; };
 		3134D1ED20CF830C00322AB2 /* TNNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1EC20CF830C00322AB2 /* TNNetworkTool.m */; };
+		3134D1F020CFB90800322AB2 /* TNNewsTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1EF20CFB90800322AB2 /* TNNewsTitleModel.m */; };
+		3134D1F320CFC2DB00322AB2 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1F120CFC2DA00322AB2 /* UIColor+Extension.m */; };
+		3134D1F620CFD93800322AB2 /* TNHomeRecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3134D1F520CFD93800322AB2 /* TNHomeRecommendController.m */; };
 		314C97DE20CA88C200C8DCBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314C97DD20CA88C200C8DCBA /* Assets.xcassets */; };
 		31C047B420CE0FD500EE3E4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C047AC20CE0FD500EE3E4F /* main.m */; };
 		31C047B520CE0FD500EE3E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C047AD20CE0FD500EE3E4F /* AppDelegate.m */; };
@@ -45,6 +48,12 @@
 		3134D1E820CE956900322AB2 /* night_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
 		3134D1EB20CF830C00322AB2 /* TNNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNNetworkTool.h; sourceTree = "<group>"; };
 		3134D1EC20CF830C00322AB2 /* TNNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNNetworkTool.m; sourceTree = "<group>"; };
+		3134D1EE20CFB90800322AB2 /* TNNewsTitleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNNewsTitleModel.h; sourceTree = "<group>"; };
+		3134D1EF20CFB90800322AB2 /* TNNewsTitleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNNewsTitleModel.m; sourceTree = "<group>"; };
+		3134D1F120CFC2DA00322AB2 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		3134D1F220CFC2DA00322AB2 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		3134D1F420CFD93800322AB2 /* TNHomeRecommendController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TNHomeRecommendController.h; sourceTree = "<group>"; };
+		3134D1F520CFD93800322AB2 /* TNHomeRecommendController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TNHomeRecommendController.m; sourceTree = "<group>"; };
 		314C97D120CA88C100C8DCBA /* TodayNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314C97DD20CA88C200C8DCBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C047AB20CE0FD500EE3E4F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,6 +156,8 @@
 		3134D1CD20CE471F00322AB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3134D1EE20CFB90800322AB2 /* TNNewsTitleModel.h */,
+				3134D1EF20CFB90800322AB2 /* TNNewsTitleModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +167,8 @@
 			children = (
 				3134D1D820CE474900322AB2 /* TNHomeViewController.h */,
 				3134D1D920CE474900322AB2 /* TNHomeViewController.m */,
+				3134D1F420CFD93800322AB2 /* TNHomeRecommendController.h */,
+				3134D1F520CFD93800322AB2 /* TNHomeRecommendController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -312,6 +325,8 @@
 		31C047B120CE0FD500EE3E4F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3134D1F220CFC2DA00322AB2 /* UIColor+Extension.h */,
+				3134D1F120CFC2DA00322AB2 /* UIColor+Extension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -463,6 +478,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TodayNews/Pods-TodayNews-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/SGPagingView/SGPagingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
@@ -470,6 +486,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGPagingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
@@ -488,14 +505,17 @@
 			files = (
 				3134D1E020CE476F00322AB2 /* TNRedPackageViewController.m in Sources */,
 				3134D1E620CE479C00322AB2 /* TNWeitoutiaoViewController.m in Sources */,
+				3134D1F020CFB90800322AB2 /* TNNewsTitleModel.m in Sources */,
 				3134D1ED20CF830C00322AB2 /* TNNetworkTool.m in Sources */,
 				31C047B520CE0FD500EE3E4F /* AppDelegate.m in Sources */,
 				3134D1C320CE45F400322AB2 /* TNMyNavigationController.m in Sources */,
 				3134D1E320CE478500322AB2 /* TNHuoshanViewController.m in Sources */,
+				3134D1F320CFC2DB00322AB2 /* UIColor+Extension.m in Sources */,
 				31C047B920CE104C00EE3E4F /* TNMyTabBarController.m in Sources */,
 				3134D1DA20CE474900322AB2 /* TNHomeViewController.m in Sources */,
 				3134D1DD20CE475F00322AB2 /* TNVideoViewController.m in Sources */,
 				31C047B420CE0FD500EE3E4F /* main.m in Sources */,
+				3134D1F620CFD93800322AB2 /* TNHomeRecommendController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +656,10 @@
 				DEVELOPMENT_TEAM = 423Z88A982;
 				INFOPLIST_FILE = TodayNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masterking.TodayNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -654,7 +677,10 @@
 				DEVELOPMENT_TEAM = 423Z88A982;
 				INFOPLIST_FILE = TodayNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masterking.TodayNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

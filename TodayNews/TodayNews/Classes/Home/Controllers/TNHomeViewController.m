@@ -8,8 +8,10 @@
 
 #import "TNHomeViewController.h"
 #import "SGPagingView.h"
+#import "TNNewsTitleModel.h"
+#import "TNHomeRecommendController.h"
 
-@interface TNHomeViewController ()
+@interface TNHomeViewController () <SGPageTitleViewDelegate,SGPageContentViewDelegate>
 @property (nonatomic, strong) SGPageTitleView *pageTitleView;
 @property (nonatomic, strong) SGPageContentView *pageContentView;
 
@@ -72,10 +74,76 @@
     //self.navigationItem.titleView =
     [self.view addSubview:self.addChannelButton];
     
+    [TNNetworkTool loadHomeNewsTitleData:^(NSArray *newsTitles) {
+        NSMutableArray *mArr = [NSMutableArray arrayWithCapacity:8];
+        NSMutableArray *nameArr = [NSMutableArray arrayWithCapacity:8];
+        for (NSDictionary *dic in newsTitles) {
+            TNNewsTitleModel *titleModel = [TNNewsTitleModel yy_modelWithDictionary:dic];
+            [mArr addObject:titleModel];
+            [nameArr addObject:titleModel.name];
+        }
+        
+        
+        SGPageTitleViewConfigure *config = [[SGPageTitleViewConfigure alloc] init];
+        config.titleColor = [UIColor jw_colorWithHex:0x333333];
+        config.titleSelectedColor = [UIColor redColor];
+        config.indicatorColor = [UIColor clearColor];
+        
+        self.pageTitleView = [[SGPageTitleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth - newsTitleHeight, newsTitleHeight) delegate:self titleNames:nameArr configure:config];
+        self.pageTitleView.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:self.pageTitleView];
+        
+        [mArr enumerateObjectsUsingBlock:^(TNNewsTitleModel *titleModel, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([titleModel.category isEqualToString:@"video"]) {
+                UIViewController *vc = [UIViewController new];
+                vc.view.backgroundColor = [UIColor redColor];
+                [self addChildViewController:vc];
+            }else if ([titleModel.category isEqualToString:@"essay_joke"]) {
+                UIViewController *vc = [UIViewController new];
+                vc.view.backgroundColor = [UIColor greenColor];
+                [self addChildViewController:vc];
+            }else if ([titleModel.category isEqualToString:@"image_ppmm"]) {
+                UIViewController *vc = [UIViewController new];
+                vc.view.backgroundColor = [UIColor blueColor];
+                [self addChildViewController:vc];
+            }else if ([titleModel.category isEqualToString:@"image_funny"]) {
+                UIViewController *vc = [UIViewController new];
+                vc.view.backgroundColor = [UIColor yellowColor];
+                [self addChildViewController:vc];
+            }else if ([titleModel.category isEqualToString:@"组图"]) {
+                UIViewController *vc = [UIViewController new];
+                vc.view.backgroundColor = [UIColor brownColor];
+                [self addChildViewController:vc];
+            }else if ([titleModel.category isEqualToString:@"jinritemai"]) {
+                UIViewController *vc = [UIViewController new];
+                vc.view.backgroundColor = [UIColor purpleColor];
+                [self addChildViewController:vc];
+            }else{
+                TNHomeRecommendController *recommendVC = [[TNHomeRecommendController alloc] init];
+                recommendVC.view.backgroundColor = [UIColor cyanColor];
+                [self addChildViewController:recommendVC];
+            }
+        }];
+        
+        self.pageContentView = [[SGPageContentView alloc] initWithFrame:CGRectMake(0, newsTitleHeight, kScreenWidth, self.view.bounds.size.height - newsTitleHeight) parentVC:self childVCs:self.childViewControllers];
+        self.pageContentView.delegatePageContentView = self;
+        [self.view addSubview:self.pageContentView];
+    }];
 }
 
 - (void)clickAction{
     
 }
+
+#pragma mark - SGPageTitleViewDelegate
+- (void)pageTitleView:(SGPageTitleView *)pageTitleView selectedIndex:(NSInteger)selectedIndex{
+    NSLog(@"当前选中的下标为---------%zd",selectedIndex);
+}
+
+#pragma mark - SGPageContentViewDelegate
+- (void)pageContentView:(SGPageContentView *)pageContentView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex{
+    [self.pageTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
+}
+
 
 @end
